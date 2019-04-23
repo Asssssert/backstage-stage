@@ -9,20 +9,23 @@
         <el-form size="small" :hide-required-asterisk="true" :model="form" :rules="rules" ref="form"
                  class="demo-ruleForm" label-position="top">
           <el-form-item prop="email">
-            <el-input placeholder="请输入邮箱" v-model="form.email" :autofocus="true"></el-input>
+            <el-input :placeholder="$t('message.pleaseEnterEmail')" v-model="form.email" :autofocus="true"></el-input>
           </el-form-item>
           <el-form-item prop="code">
-            <el-input placeholder="请输入验证码" v-model="form.code" :autofocus="true" style="width: 65%;"/>
-            <el-button type="success" @click="getCode">{{getCodeBT}}</el-button>
+            <el-input :placeholder="$t('message.pleaseEnterCode')" v-model="form.code" :autofocus="true"
+                      style="width: 65%;"/>
+            <el-button type="success" @click="getCode">{{$t('message.getCode')}}</el-button>
           </el-form-item>
           <el-form-item prop="newPWD" v-if="check">
-            <el-input placeholder="请输入新密码" v-model="form.newPWD" show-password></el-input>
+            <el-input :placeholder="$t('message.pleaseEnterNewPWD')" v-model="form.newPWD" show-password></el-input>
           </el-form-item>
           <el-form-item prop="checkPWD" v-if="check">
-            <el-input placeholder="请确认密码" v-model="form.checkPWD" show-password></el-input>
+            <el-input :placeholder="$t('message.pleaseCheckPWD')" v-model="form.checkPWD" show-password></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" size="small" @click="submitForm('form')" style="width: 100%;">提交</el-button>
+            <el-button type="primary" size="small" @click="submitForm('form')" style="width: 100%;">
+              {{$t('message.submit')}}
+            </el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -39,7 +42,6 @@
     components: {},
     data() {
       return {
-        getCodeBT: "获取验证码",
         check: false,
         form: {
           email: '',
