@@ -46,7 +46,7 @@
       }
     },
     mounted: function () {
-      // _g.toPageByName('index')
+      _g.toPageByName('index')
     },
     methods: {
       forgetPWD() {

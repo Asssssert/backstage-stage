@@ -15,6 +15,15 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals: {
+    'jquery':'$',
+    'js-cookie':'Cookies',
+    'lockr':'Lockr',
+    'vue':'Vue',
+    'vuex':'Vuex',
+    'axios':'axios',
+    'nprogress':'NProgress',
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
